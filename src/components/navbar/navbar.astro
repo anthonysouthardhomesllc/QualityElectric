@@ -7,7 +7,12 @@ import { Icon } from 'astro-icon/components';
 import Image from "astro/components/Image.astro";
 import logoImage from "@assets/Electric.png";
 
-const menuitems = [
+const menuitems: Array<{
+  title: string;
+  path: string;
+  children?: { title: string; path: string }[];
+  badge?: boolean;
+}> = [
   // {
   //   title: "Features",
   //   path: "#",
@@ -90,7 +95,7 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="tel:8128728776" size="md" block id="call">Call Now</Link>
+          <Link href="tel:8128728776" size="md" block id="contact">Call Now</Link>
         </div>
       </MenuItems>
     </Astronav>
@@ -100,19 +105,19 @@ const menuitems = [
           <Icon id="socials" name="simple-icons:facebook" /></a>
         <a aria-label="Instagram" href="https://www.instagram.com/qualityelectric.indiana/" target="_blank"><Icon id="socials" name="simple-icons:instagram" /></a>
         <a aria-label="Tiktok" href="https://www.tiktok.com/@quality.electric.indiana" target="_blank"><Icon id="socials" name="simple-icons:tiktok" /></a>
-      <Link aria-label="Call Us" href="tel:8128728376" size="md" id="call">Call Now</Link>
+      <Link aria-label="Contact Us" href="tel:8128728375" size="md" id="contact">Call Now</Link>
     </div>
     </div>
   </header>
 </Container>
 
 <style>
-  #call {
-    background-color: #f0b70e;
+  #contact {
+    background: #f0b70e;
     /* backdrop-filter: contrast(200); */
   }
 
-  #call:hover {
+  #contact:hover {
     font-size:large;
   }
 
