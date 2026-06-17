@@ -65,7 +65,7 @@ const menuitems: Array<{
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-black hover:text-[#ffca28]">
                       <span> {item.title}</span>
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
@@ -79,30 +79,56 @@ const menuitems: Array<{
             ))
           }
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="tel:8128728776" size="md" block id="contact">Contact Us</Link>
+
+        <!-- Mobile Specific Actions Panel -->
+        <div class="lg:hidden flex items-left mt-2 gap-4">
+          <Link href="/contact/" size="md" block id="contact-mobile" width="7em">
+            Contact Us
+          </Link>
         </div>
       </MenuItems>
     </Astronav>
+
+    <!-- Desktop Specific Actions Panel -->
     <div>
       <div class="hidden lg:flex items-center gap-4">
         <a aria-label="Facebook" href="https://www.facebook.com/quality.electric.indiana/" target="_blank">
           <Icon id="socials" name="simple-icons:facebook" /></a>
         <a aria-label="Instagram" href="https://www.instagram.com/qualityelectric.indiana/" target="_blank"><Icon id="socials" name="simple-icons:instagram" /></a>
         <a aria-label="Tiktok" href="https://www.tiktok.com/@quality.electric.indiana" target="_blank"><Icon id="socials" name="simple-icons:tiktok" /></a>
-      <Link aria-label="Contact Us" href="tel:8128728375" size="md" id="contact">Contact Us</Link>
+      <Link aria-label="Contact Us" href="/contact/" size="md" id="contact-desktop" width="7em">
+        Contact Us
+      </Link>
     </div>
     </div>
   </header>
 </Container>
 
 <style>
-  #contact {
-    background: #f0b70e;
+  #contact-desktop {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
   }
 
-  #contact:hover {
+  #contact-desktop:hover {
     font-size:large;
+    background: #ffffff;
+    border-color: #f0b70e;
+  }
+
+  #contact-mobile {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    transition: background-color 0.3s ease;
+    width: 7em;
+  }
+
+  #contact-mobile:hover {
+    font-size:large;
+    background: #ffffff;
+    border-color: #f0b70e;
   }
 
   #socials:hover{
