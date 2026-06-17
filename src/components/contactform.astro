@@ -1,5 +1,7 @@
 ---
 import Button from "./ui/button.astro";
+
+const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 ---
 
 <form
@@ -8,7 +10,7 @@ import Button from "./ui/button.astro";
   id="form"
   class="needs-validation"
   novalidate>
-  <input type="hidden" name="access_key" value="993f6c90-ee6a-4715-8141-58c4df3e5a54" />
+  <input type="hidden" name="access_key" value={web3formsKey} />
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   
   <div class="mb-5">
